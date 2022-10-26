@@ -89,7 +89,9 @@
     </nav>
     <!-- sm(640px)부터는 해당 문구를 숨깁니다 = sm이하에만 해당 문구가 나옵니다 -->
     <div class="sm:hidden">
-      <p class="text-center text-primary-content mt-10 text-lg">모바일에서 접속하셨군요!</p>
+      <p class="text-center text-primary-content mt-10 text-lg">
+        모바일에서 접속하셨군요!
+      </p>
     </div>
     <!-- 여기부터 고양이 카드입니다. flex 관련 속성으로 반응형을 구현하였습니다. -->
     <div class="flex flex-wrap justify-center text-lg sm:py-20">
@@ -102,7 +104,7 @@
           <h2 class="card-title">냥모나이트</h2>
           <p>"고대의 신비한 생물, 냥모나이트"</p>
           <div class="card-actions">
-            <button class="btn btn-secondary">간식 주기</button>
+            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
           </div>
         </div>
       </div>
@@ -116,7 +118,7 @@
           <h2 class="card-title">이 침대는 이제 제껍니다</h2>
           <p>"자네는 소파에서 주무시게"</p>
           <div class="card-actions">
-            <button class="btn btn-secondary">간식 주기</button>
+            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
           </div>
         </div>
       </div>
@@ -130,8 +132,22 @@
           <h2 class="card-title">너! 내 배게가 되어라!</h2>
           <p>"편안하구나~"</p>
           <div class="card-actions">
-            <button class="btn btn-secondary">간식 주기</button>
+            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 모달입니다 -->
+    <input type="checkbox" id="feed-modal" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">고양이 비누에게 먹이를 줍니다</h3>
+        <p class="py-4">
+          당신의 지갑에서 1억 원(₩ 100,000,000)이 빠져 나갔습니다!
+        </p>
+        <div class="modal-action">
+          <label for="feed-modal" class="btn">사료값 벌러가기</label>
         </div>
       </div>
     </div>
