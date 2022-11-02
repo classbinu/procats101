@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로냥스 101</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </head>
   <body>
     <!-- 여기부터 네브바입니다 -->
@@ -88,15 +89,26 @@
       </div>
     </nav>
     <!-- sm(640px)부터는 해당 문구를 숨깁니다 = sm이하에만 해당 문구가 나옵니다 -->
-    <div class="sm:hidden">
+    <!-- <div class="sm:hidden">
       <p class="text-center text-primary-content mt-10 text-lg">
         모바일에서 접속하셨군요!
       </p>
+    </div> -->
+    <!-- 지갑 상황입니다 -->
+    <div>
+      <h2 class="text-center my-5 text-xl">당신이 소지한 금액(원)</h2>
+      <p id="wallet" class="text-center text-primary-content text-3xl">0</p>
     </div>
+    <div class="flex justify-center mt-5">
+      <button class="btn btn-secondary" onclick="earnRandomMoney()">
+        돈 벌기
+      </button>
+    </div>
+    <p class="text-center text-warning mt-5">1~10만원을 랜덤하게 법니다</p>
     <!-- 여기부터 고양이 카드입니다. flex 관련 속성으로 반응형을 구현하였습니다. -->
-    <div class="flex flex-wrap justify-center text-lg sm:py-20">
+    <div class="flex flex-wrap justify-center text-lg sm:pb-10">
       <!-- 고양이 카드 1 -->
-      <div class="card w-80 bg-base-100 shadow-xl m-10 hover:drop-shadow-2xl">
+      <div class="card w-80 bg-base-100 shadow-xl m-5 hover:drop-shadow-2xl">
         <figure class="px-10 pt-10">
           <img src="./img/cat_1.jpeg" alt="cat" class="rounded-xl" />
         </figure>
@@ -104,13 +116,18 @@
           <h2 class="card-title">냥모나이트</h2>
           <p>"고대의 신비한 생물, 냥모나이트"</p>
           <div class="card-actions">
-            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
+            <label
+              for="feed-modal"
+              class="btn btn-secondary modal-button"
+              onclick="payMoney(100000)"
+              >간식 주기(100,000원)</label
+            >
           </div>
         </div>
       </div>
 
       <!-- 고양이 카드 2 -->
-      <div class="card w-80 bg-base-100 shadow-xl m-10 hover:drop-shadow-2xl">
+      <div class="card w-80 bg-base-100 shadow-xl m-5 hover:drop-shadow-2xl">
         <figure class="px-10 pt-10">
           <img src="./img/cat_2.jpeg" alt="cat" class="rounded-xl" />
         </figure>
@@ -118,13 +135,16 @@
           <h2 class="card-title">이 침대는 이제 제껍니다</h2>
           <p>"자네는 소파에서 주무시게"</p>
           <div class="card-actions">
-            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
+            <label for="feed-modal" class="btn btn-secondary modal-button"
+              onclick="payMoney(500000)"
+              >간식 주기(500,000원)</label
+            >
           </div>
         </div>
       </div>
 
       <!-- 고양이 카드 3 -->
-      <div class="card w-80 bg-base-100 shadow-xl m-10 hover:drop-shadow-2xl">
+      <div class="card w-80 bg-base-100 shadow-xl m-5 hover:drop-shadow-2xl">
         <figure class="px-10 pt-10">
           <img src="./img/cat_3.jpeg" alt="cat" class="rounded-xl" />
         </figure>
@@ -132,14 +152,17 @@
           <h2 class="card-title">너! 내 베개가 되어라!</h2>
           <p>"편안하구나~"</p>
           <div class="card-actions">
-            <label for="feed-modal" class="btn btn-secondary modal-button">간식 주기</label>
+            <label for="feed-modal" class="btn btn-secondary modal-button"
+              onclick="payMoney(1000000)"
+              >간식 주기(1,000,000원)</label
+            >
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 모달입니다 -->
-    <input type="checkbox" id="feed-modal" class="modal-toggle" />
+    <!-- 모달입니다. 모달은 임시로 적용하지 않습니다. -->
+    <!-- <input type="checkbox" id="feed-modal" class="modal-toggle" />
     <div class="modal">
       <div class="modal-box">
         <h3 class="font-bold text-lg">고양이 비누에게 먹이를 줍니다</h3>
@@ -150,7 +173,7 @@
           <label for="feed-modal" class="btn">사료값 벌러가기</label>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 여기부터 푸터입니다 -->
     <footer class="footer footer-center p-10 bg-secondary text-primary-content">
